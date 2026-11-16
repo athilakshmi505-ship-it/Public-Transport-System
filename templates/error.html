@@ -1,0 +1,1 @@
+{% extends "base.html" %}{% block title %}Page not found · GoTransit{% endblock %}{% block content %}<section class="empty-state error-state"><i data-lucide="map"></i><span class="eyebrow">404 · WRONG TURN</span><h1>We couldn't find that page.</h1><p>{{ message }}</p><a class="btn btn-primary" href="{{ url_for('home') }}">Back to home</a></section>{% endblock %}

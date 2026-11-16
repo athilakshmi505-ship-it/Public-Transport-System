@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.class
+.env
+venv/
+.venv/
+*.log
+app_backup.txt
+GoTransit_Frontend_Only/
+PublicTransportSystem_Complete/

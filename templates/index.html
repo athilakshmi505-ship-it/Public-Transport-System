@@ -1,0 +1,24 @@
+{% extends "base.html" %}{% block title %}Welcome · GoTransit{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow"><i data-lucide="sparkles"></i> SMARTER EVERYDAY TRAVEL</span>
+    <h1>Your journey,<br><em>our priority.</em></h1>
+    <p class="hero-lead">Plan your trip, discover bus schedules and manage your bookings in one simple place.</p>
+    <div class="hero-actions"><a class="btn btn-primary" href="{{ url_for('passenger_login') }}">Get Started <i data-lucide="arrow-right"></i></a><a class="btn btn-light" href="{{ url_for('login') }}">Admin Portal</a></div>
+    <div class="hero-points"><span><i data-lucide="shield-check"></i> Simple booking</span><span><i data-lucide="clock-3"></i> Clear schedules</span></div>
+  </div>
+  <div class="hero-art"><div class="sun"></div><div class="route-line"></div><div class="hero-bus"><i data-lucide="bus-front"></i><span>GoTransit</span></div><div class="floating-card"><i data-lucide="ticket"></i><div><b>Travel made easy</b><small>One place for your journey</small></div></div><div class="art-caption">MOVE WITH CONFIDENCE</div></div>
+</section>
+<section class="section-block">
+  <div class="section-heading"><div><span class="eyebrow">EXPLORE GOTRANSIT</span><h2>Everything you need to travel</h2></div><p>Easy tools for passengers and transport administrators.</p></div>
+  <div class="feature-grid">
+    <a class="feature-card" href="{{ url_for('passenger_search') if session.get('passenger_id') else url_for('passenger_login') }}"><span class="feature-icon"><i data-lucide="search"></i></span><h3>Search buses</h3><p>Find available services for your route and travel date.</p><span class="text-link">Find a bus <i data-lucide="arrow-up-right"></i></span></a>
+    <a class="feature-card" href="{{ url_for('passenger_bookings') if session.get('passenger_id') else url_for('passenger_login') }}"><span class="feature-icon"><i data-lucide="ticket"></i></span><h3>Manage bookings</h3><p>View your booking details and cancellation status.</p><span class="text-link">My bookings <i data-lucide="arrow-up-right"></i></span></a>
+    <a class="feature-card" href="{{ url_for('login') }}"><span class="feature-icon"><i data-lucide="layout-dashboard"></i></span><h3>Admin workspace</h3><p>Manage buses, routes, schedules and booking records.</p><span class="text-link">Admin login <i data-lucide="arrow-up-right"></i></span></a>
+  </div>
+</section>
+<section class="stats-strip">
+  <div><b>{{ counts.buses if counts else 0 }}</b><span>Registered buses</span></div><div><b>{{ counts.routes if counts else 0 }}</b><span>Travel routes</span></div><div><b>{{ counts.schedules if counts else 0 }}</b><span>Schedules</span></div><div><b>{{ counts.passengers if counts else 0 }}</b><span>Passengers</span></div>
+</section>
+{% endblock %}
