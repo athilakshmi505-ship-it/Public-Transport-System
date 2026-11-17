@@ -14,12 +14,12 @@ DB_CONFIG = {
     "host": os.environ.get("DB_HOST", "localhost"),
     "database": os.environ.get("DB_NAME", "public_transport_db"),
     "user": os.environ.get("DB_USER", "postgres"),
-    "password": os.environ.get("DB_PASSWORD", ""),
+    "password": os.environ.get("Athi@Vcet", "Athi@Vcet"),
     "port": os.environ.get("DB_PORT", "5432"),
 }
 
-ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME")
-ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
+ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME","admin")
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD","ChangeMe123!")
 
 
 # DATABASE CONNECTION
